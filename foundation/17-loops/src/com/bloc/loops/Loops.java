@@ -11,21 +11,26 @@ public class Loops extends Object {
 		boolean temp = false;
 
 		//********** Starts Here ************************/
-		temp = someBools[7];
-		someBools[7] = someBools[0];
-		someBools[0] = temp;
+        int boolCount = 0;
+        while (boolCount <= someBools.length) {
+            temp = someBools[7];
+            someBools[7] = someBools[0];
+            someBools[0] = temp;
 
-		temp = someBools[6];
-		someBools[6] = someBools[1];
-		someBools[1] = temp;
+            temp = someBools[6];
+            someBools[6] = someBools[1];
+            someBools[1] = temp;
 
-		temp = someBools[5];
-		someBools[5] = someBools[2];
-		someBools[2] = temp;
+            temp = someBools[5];
+            someBools[5] = someBools[2];
+            someBools[2] = temp;
 
-		temp = someBools[4];
-		someBools[4] = someBools[3];
-		someBools[3] = temp;
+            temp = someBools[4];
+            someBools[4] = someBools[3];
+            someBools[3] = temp;
+
+            boolCount++;
+        }
 		//********** Ends Here **************************/
 		
 
@@ -50,6 +55,8 @@ public class Loops extends Object {
 		/************************************************/
 
 		//********** Starts Here ************************/
+
+        /*
 		numArray[0] = !someBools[0] ? 1 : 0;
 		numArray[1] = !someBools[1] ? 1 : 0;
 		numArray[2] = !someBools[2] ? 1 : 0;
@@ -58,6 +65,11 @@ public class Loops extends Object {
 		numArray[5] = !someBools[5] ? 1 : 0;
 		numArray[6] = !someBools[6] ? 1 : 0;
 		numArray[7] = !someBools[7] ? 1 : 0;
+        */
+
+        for (int i = 0; i < numArray.length; i++) {
+            numArray[i] = !someBools[i] ? 1 : 0;
+        }
 		//********** Ends Here **************************/
 
 
