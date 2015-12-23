@@ -35,9 +35,11 @@ public class Methods extends Object {
 		/************************************************
 		 * Your work goes here
 		 ************************************************/
-
-		// You are free to modify the return statement
-		return false;
+        if ( original == true) {
+            return false;
+        } else {
+            return true;
+        }
 	}
 
 	/*
@@ -60,6 +62,10 @@ public class Methods extends Object {
 		/************************************************
 		 * Your work goes here
 		 ************************************************/
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] != 0)
+                numbers[i] *= -1;
+        }
 	}
 
 
@@ -90,9 +96,15 @@ public class Methods extends Object {
 		/************************************************
 		 * Your work goes here
 		 ************************************************/
-
-		// You are free to modify the return statement
-		return new boolean [0];
+        boolean[] compareIndex = new boolean [someNumbers.length];
+        for (int i = 0; i < someNumbers.length; i++) {
+            if ( someNumbers[i] >= floor) {
+                compareIndex[i] = true;
+            } else {
+                compareIndex[i] = false;
+            }
+        }
+        return compareIndex;
 	}
 
 	/*
@@ -117,9 +129,26 @@ public class Methods extends Object {
 		/************************************************
 		 * Your work goes here
 		 ************************************************/
+        int[] minMax = new int[2];
+        minMax[0] = someNumbers[0]; // MIN
+        minMax[1] = someNumbers[0]; // MAX
 
+        if (someNumbers != null) {
+
+            for (int i = 0; i < someNumbers.length; i++) {
+                // find minimum
+                if (someNumbers[i] < minMax[0]) {
+                    minMax[0] = someNumbers[i];
+
+                // Find Max
+                }
+                if (someNumbers[i] > minMax[1]) {
+                    minMax[1] = someNumbers[i];
+                }
+            }
+        }
 		// You are free to modify the return statement
-		return new int[2];
+		return minMax;
 	}
 
 
