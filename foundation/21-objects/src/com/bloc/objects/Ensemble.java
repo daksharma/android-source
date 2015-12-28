@@ -20,6 +20,17 @@ class Ensemble extends Object {
 	 *	ASSIGNMENT:
 	 *	Create the first Ensemble constructor
 	/************************************************/
+	public Ensemble (Artist... artists) {
+        this(null, artists);
+        //this.mArtists = artists;
+        /*
+        System.out.println("First Ensemble Constructor: ");
+        System.out.println("mArtist.length: " + mArtists.length);
+        System.out.println("param artists: " + artists[0].mFirstName + " " + artists[0].mLastName);
+        System.out.println("mArtists: " + mArtists[0].mFirstName + " " + mArtists[0].mLastName);
+        System.out.println("Ensemble mName: " + mName);
+        */
+    }
 
 	/*
 	 * Ensemble
@@ -36,4 +47,24 @@ class Ensemble extends Object {
 	 *	ASSIGNMENT:
 	 *	Create the second Ensemble constructor
 	/************************************************/
+    public Ensemble (String name, Artist... artists) {
+        //this();
+        this.mArtists = artists;
+        if (name == null && mName == null) {
+            this.mName = artists[0].mFirstName + artists[0].mLastName;
+        } else {
+            this.mName = name;
+        }
+
+        /*
+        System.out.println(name);
+        System.out.println(mName);
+
+        System.out.println("Second Ensemble Constructor: ");
+        System.out.println("mArtist.length: " + mArtists.length);
+        System.out.println("param artists: " + artists[0].mFirstName + " " + artists[0].mLastName);
+        System.out.println("mArtists: " + mArtists[0].mFirstName + " " + mArtists[0].mLastName);
+        System.out.println("Ensemble mName: " + mName);
+        */
+    }
 }

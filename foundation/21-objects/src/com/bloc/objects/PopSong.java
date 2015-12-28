@@ -14,6 +14,8 @@ class PopSong extends Song {
 	 *	ASSIGNMENT:
 	 *	Create the first PopSong constructor
 	/************************************************/
+	public PopSong() {
+	}
 
 	/*
 	 * PopSong
@@ -27,6 +29,12 @@ class PopSong extends Song {
 	 *	ASSIGNMENT:
 	 *	Create the second PopSong constructor
 	/************************************************/
+	public PopSong (Ensemble ensemble, String title) {
+        this.mEnsemble = ensemble;
+        this.mTitle = title;
+        this.mYearReleased = 0;
+
+	}
 
 	/*
 	 * PopSong
@@ -41,6 +49,12 @@ class PopSong extends Song {
 	 *	ASSIGNMENT:
 	 *	Create the third PopSong constructor
 	/************************************************/
+	public PopSong (Ensemble ensemble, String title, int yearReleased) {
+        this.mWeeksOnBillboard = 0;
+        this.mEnsemble = ensemble;
+        this.mTitle = title;
+        this.mYearReleased = yearReleased;
+    }
 
 	/*
 	 * PopSong
@@ -55,4 +69,14 @@ class PopSong extends Song {
 	 *	ASSIGNMENT:
 	 *	Create the fourth PopSong constructor
 	/************************************************/
+    public PopSong (Ensemble ensemble, String title, int yearReleased, int weeksOnBillBoard) {
+        Artist johnDoe = new Artist("John", "Doe");
+        Artist johnnyBravo = new Artist("Johnny", "Bravo");
+        Artist [] johnTeam = {johnDoe, johnnyBravo};
+        this.mEnsemble = new Ensemble("The JJ", johnTeam);
+        this.mWeeksOnBillboard = weeksOnBillBoard;
+        this.mTitle = title;
+        this.mYearReleased = yearReleased;
+
+    }
 }
