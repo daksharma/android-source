@@ -1,14 +1,13 @@
 package com.bloc.securitypackages.citrus;
+import com.bloc.securitypackages.colors.OrangeColor;
 import com.bloc.securitypackages.Fruit;
-import com.bloc.securitypackages.colors.OrangeRed;
 
 /************************************************
  *	YOU MAY MODIFY THIS FILE AND/OR ITS LOCATION
 /************************************************/
 
-
-public class Grapefruit extends Fruit {
-	public Grapefruit() {
-		super(Grapefruit.class.getSimpleName(), 210, new OrangeRed(), .48d);
+public class OrangeFruit extends Fruit {
+	public OrangeFruit() {
+		super("OrangeFruit", 130, new OrangeColor(), .21d);
 	}
 }
