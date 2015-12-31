@@ -24,12 +24,14 @@ public class FavoritePastries {
 	 *	Use a HashMap to store the relationship
 	 *	between rating and pastry: HashMap<Integer, List<Pastry>>
 	/************************************************/
+	private HashMap<Integer, List<Pastry>> mFavPastries;
 
 
 	public FavoritePastries() {
 		/************************************************
  	 	 *	WORK HERE
 		/************************************************/
+		mFavPastries = new HashMap<Integer, List<Pastry>>();
 	}
 
 	/* 
@@ -51,6 +53,14 @@ public class FavoritePastries {
 		/************************************************
  	 	 *	WORK HERE
 		/************************************************/
+		removePastry(pastry);
+		if(mFavPastries.containsKey(rating)) {
+			mFavPastries.get(rating).add(pastry);
+		} else {
+			List<Pastry> partyPastries = new ArrayList<Pastry>();
+			partyPastries.add(pastry);
+			mFavPastries.put(rating, partyPastries);
+		}
 	}
 
 	/* 
@@ -69,6 +79,12 @@ public class FavoritePastries {
 		/************************************************
  	 	 *	WORK HERE, you must modify the return value
 		/************************************************/
+        for(List<Pastry> mPastries : mFavPastries.values()) {
+            if (mPastries.contains(pastry)) {
+                mPastries.remove(pastry);
+                return true;
+            }
+        }
 		return false;
 	}
 
@@ -90,6 +106,12 @@ public class FavoritePastries {
 		/************************************************
  	 	 *	WORK HERE, you must modify the return value
 		/************************************************/
+        for(int key : mFavPastries.keySet()) {
+            List<Pastry> mPastries = mFavPastries.get(key);
+            if(mPastries.contains(pastry)) {
+                return key;
+            }
+        }
 		return -1;
 	}
 
@@ -113,7 +135,10 @@ public class FavoritePastries {
 		/************************************************
  	 	 *	WORK HERE, you must modify the return value
 		/************************************************/
-		return null;
+        if(mFavPastries.containsKey(rating)) {
+            return mFavPastries.get(rating);
+        }
+		return new ArrayList<Pastry>();
 	}
 
 }
